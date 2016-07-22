@@ -1,0 +1,31 @@
+[	{
+		"question" : "Can a user edit the personal infomation of the patients.",
+		"answers"  : [
+			{"id"  : 0, "text" : "True"},
+			{"id"  : 1, "text" : "False"}
+		],
+		"correct"  : 0,
+        "points" : 100,
+        "tag" : "Patient Information"
+	},
+	{
+		"question" : "Do users have access to patient summary?",
+		"answers"  : [
+			{"id"  : 0, "text" : "True"},
+			{"id"  : 1, "text" : "False"}
+		],
+		"correct"  : 0,
+        "points" : 50,
+        "tag" : "Patient Information"
+	},
+    {
+		"question" : "A user can print user clinical data of a user?",
+		"answers"  : [
+			{"id"  : 0, "text" : "True"},
+			{"id"  : 1, "text" : "False"}
+		],
+		"correct"  : 0,
+        "points" : 100,
+        "tag" : "Patient Information"
+	}
+]
