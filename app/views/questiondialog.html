@@ -41,10 +41,7 @@
             <h3>Results</h3>
             You managed <span class="badge">{{ pointsGotten }}</span> points out of a possible <span class="badge">{{ totalPoints }}</span> points 
             <p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions.</p>
-            <div class="share" ng-bind-html="createShareLinks(percentage)">
-            </div>
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" type="button" ng-click="$close()">Close</button>
         </div>
     </div>
 </div>
