@@ -26,6 +26,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/questions', {
+        templateUrl: 'views/questiondialog.html',
+        controller: 'QuestiondialogCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',

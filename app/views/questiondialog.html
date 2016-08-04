@@ -1,47 +1,9 @@
-<div id="myQuiz">
-    <div class="modal-header">
-        <h3 class="modal-title">Please answer the following question</h3>
-    </div>
-    <div class="modal-body">
-
-        <div class="intro {{ (activeQuestion > -1 ) ? 'inactive' : 'active' }}">
-            <h2>Welcome</h2>
-            <p>Click begin to test your knowledge of saturn</p>
-            <p class="btn" ng-click="activeQuestion = 0">Begin</p>
-        </div>
-
-        <div class="question
-            {{ $index === activeQuestion ? 'active' : 'inactive' }}
-            {{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered' }} 
-            " ng-repeat="myQuestion in myQuestions">
-            <p class="txt">{{ myQuestion.question }}</p>
-            <p>Points for this question <span class="badge">{{ myQuestion.points }}</span></p>
-            <p class="ans"
-                ng-class="{
-                    image: Answer.image,
-                    selected:isSelected($parent.$index,$index), 
-                    correct:isCorrect($parent.$index,$index) 
-                }" 
-                ng-style="{'background-image' : 'url({{Answer.image}})'}"
-                ng-click="selectAnswer($parent.$index,$index,myQuestion.points)"
-                ng-repeat="Answer in myQuestions[$index].answers">
-                {{Answer.text}}
-            </p>
-            <div class="feedback">
-                <p ng-show="myQuestion.correctness === 'correct'" class="correct">You are correct</p>
-                <p  ng-show="myQuestion.correctness === 'incorrect'" class="incorrect">Oops! That is not correct</strong></p>
-                <p>{{myQuestion.feedback}}</p>
-                <div class="btn" ng-click="selectContinue()">Continue</div>
-            </div>
-
-        </div>
-    </div>
-    <div class="modal-footer">
-        <div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive'}}">
-            <h3>Results</h3>
-            You managed <span class="badge">{{ pointsGotten }}</span> points out of a possible <span class="badge">{{ totalPoints }}</span> points 
-            <p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions.</p>
-            <button class="btn btn-primary" type="button" ng-click="$close()">Close</button>
-        </div>
-    </div>
+<div class="modal-header">
+    <h3 class="modal-title">Please answer the following question. <span class="btn btn-danger pull-right" ng-click="$dismiss()">X</span></h3>
+</div>
+<div class="modal-body">
+    <quiz></quiz>
+</div>
+<div class="modal-footer">
+    
 </div>

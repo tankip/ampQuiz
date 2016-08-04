@@ -1,5 +1,5 @@
 [	{
-		"question" : "What is the population of patients on ARVs in Busia.",
+		"question" : "What is the population of patients on ARVs in Busia. ",
 		"answers"  : [
 			{"id"  : 0, "text" : "1200"},
 			{"id"  : 1, "text" : "600"},
@@ -8,10 +8,10 @@
 		],
 		"correct"  : 2,
         "points" : 100,
-        "tag" : "Population"
+        "tag" : "Busia patients Population"
 	},
 	{
-		"question" : "How many patients were registered between 2009 and 2012",
+		"question" : "How many patients were registered between 2009 and 2012 How many patients were registered between 2009 and 2012 How many patients were registered between 2009 and 2012 How many patients were registered between 2009 and 2012 How many patients were registered between 2009 and 2012 How many patients were registered between 2009 and 2012 How many patients were registered between 2009 and 2012",
 		"answers"  : [
 			{"id"  : 0, "text" : "1000"},
 			{"id"  : 1, "text" : "500"},
@@ -20,7 +20,7 @@
 		],
 		"correct"  : 2,
 		"points" : 100,
-        "tag" : "Population"
+        "tag" : "Ampath patient population"
 	},
 	{
 		"question" : "Do users have access to patient summary?",
@@ -30,7 +30,7 @@
 		],
 		"correct"  : 0,
         "points" : 50,
-        "tag" : "Patient Information"
+        "tag" : "Patient dashboard"
 	},
     {
 		"question" : "A user can print user clinical data",
@@ -40,6 +40,6 @@
 		],
 		"correct"  : 0,
         "points" : 100,
-        "tag" : "Patient Information"
+        "tag" : "Clinic dashboard"
 	}
 ]

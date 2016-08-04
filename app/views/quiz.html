@@ -1,0 +1,41 @@
+<div>
+	<div ng-show="inProgress">
+		<div ng-show="!quizOver">
+			<div id="myQuiz">
+				<div id="question">
+					{{question}}
+				</div>
+				<div id="points"><span class="badge">{{points}} points</span></div>
+				<div id="answers">
+					<p class="ans" 			
+						ng-repeat="option in options"
+						ng-click="!answered && selectAnswer(option, answer, points)">
+						{{option.text}}	
+					</p>
+				</div>
+				<div id="tag">
+					{{tag}}
+				</div>
+				<div ng-show="!answerMode">
+					<p ng-show="correctness" class="correct">That is correct</p>
+					<p ng-show="!correctness" class="incorrect">Oops! That is not correct</strong></p>
+					<button class="btn btn-success" ng-click="nextQuestion()" class="next-question">Next</button>
+				</div>
+			</div>
+		</div>
+	
+		<div ng-show="quizOver">
+			<div class="results">
+				<h3>Results</h3>
+				You managed <span class="badge">{{ pointsGotten }}</span> points out of a possible <span class="badge">{{ totalPoints }}</span> points 
+				<p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions.</p>
+			</div>
+			<button class="btn btn-success" ng-click="reset()">Play again</button>
+		</div>
+	
+	</div>
+	<div class="jumbotron" ng-show="!inProgress">
+		<p>Welcome to the QuizApp</p>
+		<button class="btn btn-success" id="startQuiz" ng-click="start()">Start the Quiz</button>
+	</div>
+</div>
