@@ -136,15 +136,25 @@ body {
 #myQuiz .intro p {
   margin: 0px 0px 40px 0px;
 }
+
+#myQuiz #points {
+  margin-top: 10px;
+}
 /*Question*/
+#myQuiz #answers {
+  margin-top: 10px;
+}
 #myQuiz .ans {
   list-style-type: none;
-  border:2px solid brown;
+  border:2px solid darkgray;
   border-radius: 6px;
   padding: 5px;
   margin:  0px 15px 15px 0px;
   position: relative;
 } 
+#myQuiz .ans:hover {
+  border-color: green;
+}
 #myQuiz .ans.selected {
   border-color: #be4b16;
 } 

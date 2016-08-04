@@ -1,11 +1,14 @@
-<div>
+<div class="modal-header">
+    <h3 class="modal-title">Test your knowledge with these questions. <span class="btn btn-danger pull-right" ng-click="$dismiss()">X</span></h3>
+</div>
+<div class="modal-body">
 	<div ng-show="inProgress">
 		<div ng-show="!quizOver">
 			<div id="myQuiz">
 				<div id="question">
 					{{question}}
 				</div>
-				<div id="points"><span class="badge">{{points}} points</span></div>
+				<div id="points"><span class="badge">{{points}}</span> <em>points for this question.</em></div>
 				<div id="answers">
 					<p class="ans" 			
 						ng-repeat="option in options"
@@ -14,7 +17,7 @@
 					</p>
 				</div>
 				<div id="tag">
-					{{tag}}
+					<p>This question tests on <strong>{{tag}}</strong></p>
 				</div>
 				<div ng-show="!answerMode">
 					<p ng-show="correctness" class="correct">That is correct</p>
@@ -30,12 +33,14 @@
 				You managed <span class="badge">{{ pointsGotten }}</span> points out of a possible <span class="badge">{{ totalPoints }}</span> points 
 				<p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions.</p>
 			</div>
-			<button class="btn btn-success" ng-click="reset()">Play again</button>
+			<button class="btn btn-success" ng-click="reset()">Try again</button>
 		</div>
 	
 	</div>
 	<div class="jumbotron" ng-show="!inProgress">
-		<p>Welcome to the QuizApp</p>
 		<button class="btn btn-success" id="startQuiz" ng-click="start()">Start the Quiz</button>
 	</div>
+</div>
+<div class="modal-footer">
+    
 </div>

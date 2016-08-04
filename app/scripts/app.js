@@ -24,11 +24,7 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/questions', {
-        templateUrl: 'views/questiondialog.html',
-        controller: 'QuestiondialogCtrl'
+        //controllerAs: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
