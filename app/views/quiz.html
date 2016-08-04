@@ -29,6 +29,7 @@
 	
 		<div ng-show="quizOver">
 			<div class="results">
+				<h3>Thank you for answering the questions.</h3>
 				<h3>Results</h3>
 				You managed <span class="badge">{{ pointsGotten }}</span> points out of a possible <span class="badge">{{ totalPoints }}</span> points 
 				<p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions.</p>
@@ -38,7 +39,7 @@
 	
 	</div>
 	<div class="jumbotron" ng-show="!inProgress">
-		<button class="btn btn-success" id="startQuiz" ng-click="start()">Start the Quiz</button>
+		<button class="btn btn-success" id="startQuiz" ng-click="start()">Start Quiz</button>
 	</div>
 </div>
 <div class="modal-footer">
