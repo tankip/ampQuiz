@@ -8,13 +8,12 @@
  * Factory in the ampQuizApp.
  */
 angular.module('ampQuizApp')
-  .factory('quizfactory', function ($http) {
+  .factory('quizfactory', ['$http', function ($http) {
+    
     var questions;
     
     $http.get('/data/questions.json').then(function(quizData) {
-      
       questions = quizData.data;
-
     });
     
     return {
@@ -26,4 +25,4 @@ angular.module('ampQuizApp')
         }
       }
     };
-  });
+  }]);

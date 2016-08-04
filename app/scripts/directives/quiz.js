@@ -7,7 +7,7 @@
  * # quiz
  */
 angular.module('ampQuizApp')
-  .directive('quiz', function (quizfactory) {
+  .directive('quiz', ['quizfactory',function (quizfactory) {
     return {
       templateUrl: '../../views/quiz.html',
       restrict: 'E',
@@ -23,7 +23,6 @@ angular.module('ampQuizApp')
           $scope.quizOver = false;
           $scope.inProgress = true;
           $scope.getQuestion();
-          $scope.selected = false;
         };
 
         $scope.reset = function() {
@@ -95,4 +94,4 @@ angular.module('ampQuizApp')
 
       }
     };
-  });
+  }]);

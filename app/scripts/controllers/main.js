@@ -8,12 +8,12 @@
  * Controller of the ampQuizApp
  */
 angular.module('ampQuizApp')
-  .controller('MainCtrl', function ($scope, $uibModal) {
+  .controller('MainCtrl',['$scope', '$uibModal', function ($scope, $uibModal) {
 
     $scope.showQuestions = function() {
       $uibModal.open({
         template: '<quiz></quiz>'
       });
     };
-    
-  });
+
+  }]);
