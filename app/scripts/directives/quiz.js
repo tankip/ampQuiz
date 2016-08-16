@@ -19,37 +19,39 @@ angular.module('ampQuizApp')
         $scope.score = 0;
         $scope.totalQuestions = 0;
 
+        var questionKeys = [];
+
         questionFactory.getGroups().get(function(data) {
           $scope.groupUrls  = data;
         });
 
         $scope.getQuestions = function() {
-          questionFactory.getQuestions($scope.questionGroup).get(function(data) {
+          
+          questionFactory.getQuestions($scope.questionGroup).get().$promise
+          .then(function(data) {
             $scope.questions = data;
+            var keys = questionFactory.getKeys(Object.keys($scope.questions));
+            questionKeys = questionFactory.shuffleArray(keys);
+            getQuestion($scope.questions);
+          })
+          .catch(function(error) {
+            console.log(error);
           });
+
         };
 
-        $scope.start = function() {
-          $scope.id = 0;
-          $scope.quizOver = false;
-          $scope.inProgress = true;
-          $scope.getQuestion();
-        };
-
-        $scope.reset = function() {
-          $scope.inProgress = false;
-          $scope.totalQuestions = 0;
-          $scope.score = 0;
-          $scope.totalPoints = 0;
-          $scope.pointsGotten = 0;
-        };
-
-        /**
+         /**
          * Function to fetch a question
          * It fetches one question at a time
          */
-        $scope.getQuestion = function() {
-          var q = quizfactory.getQuestion($scope.id);
+        function getQuestion(questions) {
+          
+          var id = questionKeys.shift();
+
+          $scope.quizOver = false;
+          $scope.inProgress = true;
+
+          var q = questions[id];
           if(q) {
             $scope.question = q.question;
             $scope.options = q.answers;
@@ -61,6 +63,16 @@ angular.module('ampQuizApp')
           } else {
             $scope.quizOver = true;
           }
+
+        }
+
+
+        $scope.reset = function() {
+          $scope.inProgress = false;
+          $scope.totalQuestions = 0;
+          $scope.score = 0;
+          $scope.totalPoints = 0;
+          $scope.pointsGotten = 0;
         };
 
         /**
@@ -96,9 +108,10 @@ angular.module('ampQuizApp')
          * Function to fetch the nextQuestion
          */
         $scope.nextQuestion = function() {
-          $scope.id++;
+          
           $scope.answered = false;
-          $scope.getQuestion();
+          getQuestion($scope.questions);
+
         };
   
         $scope.reset();
