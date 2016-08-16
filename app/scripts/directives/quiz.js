@@ -7,16 +7,27 @@
  * # quiz
  */
 angular.module('ampQuizApp')
-  .directive('quiz', ['quizfactory',function (quizfactory) {
+  .directive('quiz', ['quizfactory','questionFactory',function (quizfactory, questionFactory) {
     return {
       templateUrl: '../../views/quiz.html',
       restrict: 'E',
       controller: function ($scope) {
 
+        
         $scope.totalPoints = 0;
         $scope.pointsGotten = 0;
         $scope.score = 0;
         $scope.totalQuestions = 0;
+
+        questionFactory.getGroups().get(function(data) {
+          $scope.groupUrls  = data;
+        });
+
+        $scope.getQuestions = function() {
+          questionFactory.getQuestions($scope.questionGroup).get(function(data) {
+            $scope.questions = data;
+          });
+        };
 
         $scope.start = function() {
           $scope.id = 0;

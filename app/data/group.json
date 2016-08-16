@@ -1,0 +1,18 @@
+{
+    "1" : {
+        "name" : "HIV Summary",
+        "url" : "/data/hiv_summary.json"
+    },
+    "2" : {
+        "name" : "Patient Information",
+        "url" : "/data/patient_info.json"
+    },
+    "3" : {
+        "name" : "Monthly Appointments",
+        "url" : "/data/monthly_appointments.json"
+    },
+    "4" : {
+        "name" : "Daily Visits",
+        "url" : "/data/daily_visits.json"
+    }
+}

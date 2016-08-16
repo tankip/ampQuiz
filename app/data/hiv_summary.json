@@ -1,0 +1,36 @@
+{
+	"1" : {
+		"question" : "What is the population of patients on ARVs in Busia. ",
+		"answers"  : [
+			{"id"  : 0, "text" : "1200"},
+			{"id"  : 1, "text" : "600"},
+			{"id"  : 2, "text" : "2900"},
+			{"id"  : 3, "text" : "2000"}
+		],
+		"correct"  : 2,
+        "points" : 100,
+        "tag" : "Busia patients Population"
+	},
+	"2" : {
+		"question" : "How many patients were registered between 2009 and 2012",
+		"answers"  : [
+			{"id"  : 0, "text" : "1000"},
+			{"id"  : 1, "text" : "500"},
+			{"id"  : 2, "text" : "5000"},
+			{"id"  : 3, "text" : "10"}
+		],
+		"correct"  : 2,
+		"points" : 100,
+        "tag" : "Ampath patient population"
+	},
+	"3" : {
+		"question" : "Do users have access to patient summary?",
+		"answers"  : [
+			{"id"  : 0, "text" : "True"},
+			{"id"  : 1, "text" : "False"}
+		],
+		"correct"  : 0,
+        "points" : 50,
+        "tag" : "Patient dashboard"
+	}
+}

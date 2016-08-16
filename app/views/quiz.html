@@ -39,6 +39,15 @@
 	
 	</div>
 	<div class="jumbotron" ng-show="!inProgress">
+		<form class="form-horizontal" name="select" ng-submit="getQuestions()">
+        <h4>Select Question Group</h4>
+        <div class="form-group">
+          <select class="form-control" ng-model="questionGroup" required>
+              <option ng-repeat="groupUrl in groupUrls" value="{{groupUrl.url}}">{{groupUrl.name}}</option>
+          </select><br>    
+          <button class="btn btn-primary" ng-disabled="select.$invalid">Get Questions</button>
+        </div>
+      </form>
 		<button class="btn btn-success" id="startQuiz" ng-click="start()">Start Quiz</button>
 	</div>
 </div>
